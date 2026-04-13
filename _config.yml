@@ -1,1 +1,31 @@
-theme: minima
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+version: 2
+
+sphinx:
+  configuration: docs/conf.py
+
+# Alternatively, specify a Makefile for building docs
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.11"
+  # Specify the path to your documentation source
+  commands:
+    - pip install -r requirements.txt
+    - make html
+
+# Specify the output directory for built documentation
+python:
+  install:
+    - requirements: requirements.txt
+
+# Optionally, specify the documentation output directory
+# formats:
+#   - htmlzip
+#   - pdf
+
+# Enable or disable features
+# features:
+#   search: true
